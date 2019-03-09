@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Product feature feature.
+ */
+
+include_once 'product_feature.features.inc';

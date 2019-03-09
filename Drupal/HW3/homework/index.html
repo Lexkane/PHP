@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homework4 JS CRUD App</title>
+    <meta name="view-port" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="heading">To Do list</h2>
+
+	   <div class="addtask">
+      <!-- add task -->
+      <div class="row">
+        <div class="col-md-12">
+        <p>Add your Tasks</p>
+      </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="data"placeholder="Add your tasks here">
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" id="adtask" onclick="addtask();">Add Task</button>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-md-12">
+        <br>
+        <p>Task LIST</p>
+      </div>
+    </div>
+      <div class="task" id="taskList">
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

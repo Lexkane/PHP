@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * hook_menu realisation.
+ */
+function myhwmodule_menu() {
+  $items = [];
+  $items['myhmmodulepath'] = [
+    'title' => 'HM9',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['myhwmodule_form'],
+    'access arguments' => ['administer my module'],
+  ];
+  return $items;
+}
+
+/**
+ * hook_permission realisation
+ */
+function myhwmodule_permission() {
+  return [
+    'administer my module' => [
+      'title' => t('Administer my module'),
+      'description' => t('Perform administration tasks for my module.'),
+    ],
+  ];
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ *
+ * @return mixed
+ */
+function myhwmodule_form($form, &$form_state) {
+  $form['like_driving'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Do you like cars?'),
+    '#description' => t('Can be only cars.'),
+  ];
+
+  $form['driving_category'] = [
+    '#type' => 'checkboxes',
+    '#required' => TRUE,
+    '#title' => t('What kind of driving category you own?'),
+    '#description' => t('It you have one more, check please.'),
+    '#options' => drupal_map_assoc([
+      t('A'),
+      t('B'),
+      t('C'),
+      t('D'),
+      t('T'),
+      t('No one'),
+    ]),
+  ];
+
+  $form['machine_name'] = [
+    '#type' => 'machine_name',
+    '#default_value' => 'myhw_form_module',
+    '#maxlength' => 21,
+    '#machine_name' => [
+      'exists' => 'form_validate_machine_name',
+    ],
+  ];
+
+  $form['car_to_drive'] = [
+    '#type' => 'select',
+    '#required' => TRUE,
+    '#title' => t('What car would you like to drive?'),
+    '#options' => drupal_map_assoc([
+      t('Mclaren'),
+      t('Ferrari'),
+      t('Hummer'),
+      t('Audi'),
+    ]),
+  ];
+
+  $form['first_car'] = [
+    '#type' => 'textarea',
+    '#required' => TRUE,
+    '#title' => t('How it felt on your first drive'),
+    '#attributes' => [
+      'placeholder' => t('Type here'),
+    ],
+  ];
+
+  $form['driving_license_period'] = [
+    '#type' => 'textfield',
+    '#title' => t('How many year do you drive ?'),
+    '#description' => t('Numbers only'),
+    '#required' => TRUE,
+    '#maxlength' => 2,
+    '#attributes' => [
+      'placeholder' => t('Type here'),
+    ],
+    '#element_validate' => ['my_element_validate_number'],
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  ];
+
+  return $form;
+}
+
+/**
+ * @param $element
+ * @param $form_state
+ */
+function my_element_validate_number($element, &$form_state) {
+  $value = $element['#value'];
+  if ($value != '' && !is_numeric($value)) {
+    form_error($element, t('%name must be a number.', ['%name' => $element['#title']]));
+  }
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ */
+function myhwmodule_form_submit($form, &$form_state) {
+  // Check condition  if user likes to drive .
+  if ($form_state['values']['like_driving']) {
+    drupal_set_message(t('I drive too!'));
+  }
+  else {
+    drupal_set_message(t("Another time?"));
+  }
+
+  // Check condition for  the driver license period.
+  if ($form_state['values']['driving_license_period'] <= 2) {
+    drupal_set_message(t("It's ok to be junior"));
+  }
+  elseif ($form_state['values']['driving_license_period'] <= 5) {
+    drupal_set_message(t('You are middle driver'));
+  }
+  else {
+    drupal_set_message(t('You are senior driver'));
+  }
+
+  // Check condition for car
+  $choosen_car = $form_state['values']['car_to_drive'];
+  switch ($choosen_car) {
+    case 'Mclaren':
+      drupal_set_message(t("You have much money for this kind of car!"));
+      break;
+
+    case 'Ferrari':
+      drupal_set_message(t('Are you fond of racing?'));
+      break;
+
+    case 'Audi':
+      drupal_set_message(t("This car is good"));
+      break;
+
+    case 'Hummer':
+      drupal_set_message(t("Are you from military?"));
+      break;
+
+    default:
+      drupal_set_message(t("Something went wrong:("));
+      break;
+  }
+
+  drupal_set_message('<pre>' . print_r($form_state['values'], TRUE) . '</pre>');
+}

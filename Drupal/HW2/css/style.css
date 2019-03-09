@@ -1,0 +1,255 @@
+*{
+    font-family:sans-serif;
+}
+#page {
+	display:grid;
+	grid-template-areas:
+    "topper topper topper topper topper topper"
+    "topper topper topper topper topper topper"
+	"wrapper1 wrapper1 wrapper21 wrapper21 wrapper22 wrapper22" 
+	"wrapper1 wrapper1 wrapper23 wrapper23 wrapper23 wrapper23"
+	"wrapper3 wrapper3 wrapper4 wrapper4 wrapper4 wrapper4"
+	"foot foot foot foot foot foot"
+    "foot foot foot foot foot foot"
+    "foot foot foot foot foot foot";
+    grid-template-columns: repeat(6,1fr);
+	grid-template-rows: repeat(8,50vh);
+	
+}
+#topper{
+	grid-area:topper;
+    background-image:url(../img/Top.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: 50% 50%;
+    
+}
+
+#scroller{
+    position:absolute;
+    color:white;
+    margin-top:49%;
+    margin-left:46%;
+    
+}
+#wrapper1{
+	grid-area:wrapper1;
+    background-color:#18f7ef;
+ 
+}
+#wrapper11{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+}
+#wrapper111{
+    align-self:center !important;
+    font-size: 4em; 
+    color:white;
+    align-self:flex-start;
+}
+ 
+#wrapper112{
+    
+    color:#3624ea;
+   
+    font-weight:bold;
+}
+#wrapper12{
+    
+    letter-spacing: 1px;
+    line-height: 2;
+    color:#3624ea;
+    font-weight:bold;
+       
+}
+
+#button{
+    align-self:center !important;
+    border: 6px solid white;
+    max-width: 100%;
+    height:3em;
+    width:14em;
+    
+      
+}
+#button1{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:1em;
+    color:white; 
+    text-align: center;
+    text-decoration: none;
+    padding-top:1em;
+    color:#3624ea;
+    font-weight: bold;
+}
+
+#wrapper21{
+	grid-area:wrapper21;
+	background-image:url(../img/aboutleft.jpg);
+	background-repeat:no-repeat;
+    background-size:cover;
+		
+}
+#wrapper22{
+	grid-area:wrapper22;
+	background-image:url(../img/aboutright.jpg);
+	background-repeat:no-repeat;
+    background-size:cover;
+	
+		
+}
+#wrapper23{
+	grid-area:wrapper23;
+	background-image:url(../img/aboutdown.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+	
+		
+}
+
+#wrapper3{
+	grid-area:wrapper3;
+	background-image:url(../img/AsidePhoto.jpg);
+	background-repeat:no-repeat;
+    background-size:cover;
+
+}
+
+#wrapper4{
+	grid-area:wrapper4;
+	background-color:#3624ea;
+}
+#wrapper41{
+    position:absolute;
+    margin-top:5%;
+    margin-left:15%;
+    font-size: 2em;
+    color:white;
+}
+#wrapper42{
+    position:absolute;
+    margin-top:10%;
+    margin-left:13%;
+    color:white;
+    
+}
+#buttons{
+    position:absolute;
+    margin-top:15%;
+    margin-left:15%;
+    border: 6px solid white;
+    max-width: 100%;
+    height:3em;
+    width:14em;
+   
+      
+}
+#button2{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:1em;
+    color:white; 
+    text-align: center;
+    text-decoration: none;
+    padding-top:1em;
+}
+
+#foot{
+	grid-area:foot;
+	background-image:url(../img/Bottom.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+	
+}
+#crumb, #crumbs{
+    position:relative;
+    display:inline;
+    
+}
+#crumb{
+    margin-top:10vh;
+    margin-right:10vw;
+    float:right;
+}
+
+#crumbs{
+   position:absolute;
+   margin-top:70%;
+   margin-left:35%;
+    
+}
+
+#foot1{
+   color:white;
+   font-size: 4em;
+   position:absolute;
+   margin-top:1%;
+   margin-left:1%;
+   
+    
+}
+#foot2{
+  
+ 
+  color:white;
+  letter-spacing: 2px;
+  line-height: 3;
+  position:absolute;
+  margin-top:5%;
+  margin-left:50%;
+ 
+}
+#foot3{
+    color:white;
+   position:absolute;
+   margin-top:60%;
+   margin-left:37%;
+    
+}
+
+#breadcrumb,#breadcrumbs{
+    font-size: 18px;
+    list-style-type: none;    
+        
+}
+
+#breadcrumb a{
+    color:white;
+    text-decoration:none;
+    padding:10px 0 10px 65px;
+   
+    
+}
+#breadcrumbs a {
+    color:white;   
+    text-decoration:none;
+    padding:10px 0 10px 65px;
+}
+#breadcrumb a:hover{
+    color:aqua;
+}
+#breadcrumbs a:hover{
+    color:aqua;
+}
+
+
+#breadcrumb1, #breadcrumb2,
+#breadcrumb3, #breadcrumb4,
+#breadcrumbs1, #breadcrumbs2,
+#breadcrumbs3, #breadcrumbs4 {
+  float:none;
+  display:inline;
+}
+
+
+
+#button1:hover,#button2:hover{
+    color:red;
+    text-decoration: none;
+}
+

@@ -1,0 +1,29 @@
+body * {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif; }
+
+body .heading {
+  color: #fff;
+  background: #337AB7;
+  text-transform: uppercase;
+  padding: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  text-align: center; }
+
+body .btn, body .form-control {
+  border-radius: 0px;
+  width: 100%; }
+
+body p {
+  text-align: left;
+  color: #337AB7; }
+
+body #errorBox {
+  display: none;
+  text-align: center;
+  color: #e74747;
+  border: 2px solid #000;
+  margin: 8%; }

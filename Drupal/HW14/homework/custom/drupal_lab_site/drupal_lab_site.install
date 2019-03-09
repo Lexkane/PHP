@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Enable the modules views, views_ui and entityreference.
+ */
+function drupal_lab_site_update_7001() {
+	module_enable(['views', 'views_ui', 'entityreference']);
+}

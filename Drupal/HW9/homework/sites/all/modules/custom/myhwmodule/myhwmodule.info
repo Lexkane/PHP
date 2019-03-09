@@ -1,0 +1,5 @@
+name = hm9module
+description = hm9_module_description
+core = 7.x
+package = Custom
+configure = admin/config/myhwmodule/configuration

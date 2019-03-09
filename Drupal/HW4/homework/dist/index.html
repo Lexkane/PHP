@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homework4 Wikipedia Api</title>
+    <meta name="view-port" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="css/styles.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Wikipedia API Search</h1>
+       <img class="center-block" src="img/wiki.jpg" alt="wikilogo" />                 
+	   
+        <div class="row"></div>
+        
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="searchrequest" placeholder="Type here to get answers to your questions">
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" id="searchbutton">Search</button>
+        </div>
+     
+      <div class="row">
+      <div class="col-md-12">
+        <br>
+        <p id="info">Best match search results</p>
+      </div>
+      </div>
+      <hr>
+      <div id="errorBox"><h2>Sorry, the are no matches</h2></div>
+      <div id="content"></div>
+    </div>
+    </div>
+    <script src="scripts/script.js"></script>   
+  </body>
+</html>
